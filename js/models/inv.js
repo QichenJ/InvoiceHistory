@@ -4,6 +4,6 @@ app.Inv = Backbone.Model.extend({
 		firstName: 'John',
 		lastName: 'Doe',
 		invNum: 'NAN',
-		date: ''
+		invDate: 'asd'
 	}
 });
