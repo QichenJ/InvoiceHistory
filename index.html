@@ -7,10 +7,6 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/app.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:500' type='text/css'>
-	<script src="js/lib/jquery-2.1.4.min.js"></script>
-	<script src="js/lib/underscore-min.js"></script>
-	<script src="js/lib/backbone-min.js"></script>
-	<script src="js/lib/backbone-localstorage.min.js"></script>
 </head>
 <body>
 	<section id="invoices">
@@ -37,4 +33,16 @@
 
 		</div>
 	</section>
+	<script type="text/template" id="item-template">
+		<div class="view">
+			<span><%= firstName %></span>
+			<span><%= lastName %></span>
+			<span><%= invNum %></span>
+			<span><%= invDate %></span>
+		</div>
+	</script>
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	<script src="js/lib/underscore-min.js"></script>
+	<script src="js/lib/backbone-min.js"></script>
+	<script src="js/lib/backbone-localstorage.min.js"></script>
 </body>
