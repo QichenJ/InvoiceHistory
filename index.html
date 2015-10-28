@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Invoice Creater</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:500' type='text/css'>
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+	<script src="js/lib/underscore-min.js"></script>
+	<script src="js/lib/backbone-min.js"></script>
+	<script src="js/lib/backbone-localstorage.min.js"></script>
+</head>
+<body>
+	<section id="invoices">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="form-inputs">
+						<h1>Create New Invoice Here</h1>
+						<form>
+							<input class="form-input" type="text" name="first-Name" placeholder="First Name" autofocus>
+							<input class="form-input" type="text" name="last-Name" placeholder="Last Name">
+							<br>
+							<input class="form-input" type="text" name="data" placeholder="Today's date">
+							<input class="form-input" type="text" name="invoice-num" placeholder="invoice number">
+						</form>
+						<button id="form-button" type="button">Add</button>
+					</div id="inv-hist">
+						<h1>Invoices History</h1>
+						<ul class="inv-items"></ul>
+					<div id="inv-lists">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+</body>

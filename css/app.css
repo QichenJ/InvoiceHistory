@@ -1,0 +1,52 @@
+body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+}
+
+#invoices {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+h1 {
+	color: rgba(175, 47, 47, 0.15);
+}
+
+.form-input {
+	position: relative;
+	display: inline-block;
+	padding: 15px;
+	margin: 10px;
+	width: 300px;
+	height: auto;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.03);
+	box-shadow: 0 -2px -1px rgba(0, 0, 0, 0.03);
+}
+
+.form-input:focus {
+	border: none;
+	outline: 0;
+}
+
+#form-button {
+	width: 100px;
+	font-size: 20px;
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	line-height: 20px;
+	padding: 20px;
+	background-color: rgba(80, 80, 80, 0.2);
+}
+
+#form-button:hover {
+	color: rgba(17,171,176, 0.6);
+	transition: .5s ease-in-out;
+}
+
+#form-button:focus {
+	border: none;
+	outline: 0;
+}
+
