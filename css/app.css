@@ -5,12 +5,14 @@ body {
 	text-align: center;
 }
 
-#invoices {
-	background-color: rgba(0, 0, 0, 0.05);
-}
 h1 {
 	color: rgba(175, 47, 47, 0.15);
 }
+/*invoices section*/
+#invoices {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
 
 .form-input {
 	position: relative;
@@ -47,6 +49,20 @@ h1 {
 
 #form-button:focus {
 	border: none;
-	outline: 0;
+
+}
+/*selector section*/
+#selector {
+	background-color: rgba(255, 189, 108, 0.2);
 }
 
+#search {
+	width: 150px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: none;
+	box-shadow: 0 -2px -1px rgba(0, 0, 0, 0.03);
+}
+
+#search:focus {
+	outline: 0;
+	border: none;

@@ -1,6 +1,6 @@
 var app = app || {};
 app.AppView = Backbone.View.extend({
-	el: '#invoices',
+	el: 'body',
 
 	events: {
 		'click #form-button': 'createOnAdd'
@@ -10,18 +10,28 @@ app.AppView = Backbone.View.extend({
 		this.$inputs = this.$('.form-input');
 		this.$subButton = this.$('#form-button');
 		this.$invItems = this.$('.inv-items');
+		this.$serItems = this.$('#search-list');
 		this.listenTo(app.Invs, 'add', this.addOne);
+		this.listenTo(app.Sers, 'add', this.addOneSer);
 		this.render();
 	},
 
 	render: function() {
-
+		app.Sers.create({itemName: 'orange',
+			price: '10'
+		});
 	},
 
 	addOne: function( inv ) {
 		var view = new app.invView({model: inv});
-		console.log(view.render().el);
 		this.$invItems.append(view.render().el);
+	},
+
+	addOneSer: function( ser ) {
+		var view = new app.serView({model: ser});
+		console.log(view.render().el);
+		this.$serItems.append(view.render().el);
+
 	},
 
 	newAttributes: function() {

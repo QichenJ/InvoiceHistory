@@ -30,7 +30,38 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+	<section id="selector">
+		<div class="container">
+			<div class="row">
+				<div id="select-bar" class="col-md-6">
+					<div>
+						<form>
+							<h1>Search Bar</h1>
+							<input id="search" placeholder="search...">
+							<button id="search-button" type="submit">Search</button>
+						</form>
+					</div>
+					<div>
+						<ul id="search-list">
+							<li>
+								<div>
+									<span>Name</span>
+									<span>Price</span>
+									<span>Number</span>
+								</div>
+							</li>
+						</ul>
+					</div>
 
+				</div>
+				<div id="detail" class="col-md-6">
+					<div id="items">
+						<h1>Selected Items</h1>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 	<script type="text/template" id="item-template">
@@ -41,12 +72,23 @@
 			<span><%= invDate %></span>
 		</div>
 	</script>
+	<script type="text/template" id="search-template">
+		<div class="searchView">
+			<span><%= itemName %></span>
+			<span><%= price %></span>
+			<input type="text" placeholder="0">
+			<button>Add</button>
+		</div>
+	</script>
 	<script src="js/lib/jquery-2.1.4.min.js"></script>
 	<script src="js/lib/underscore-min.js"></script>
 	<script src="js/lib/backbone-min.js"></script>
 	<script src="js/lib/backbone-localstorage.min.js"></script>
 	<script src="js/models/inv.js"></script>
 	<script src="js/collections/invs.js"></script>
+	<script src="js/models/ser.js"></script>
+	<script src="js/collections/sers.js"></script>
+	<script src="js/views/serView.js"></script>
 	<script src="js/views/invView.js"></script>
 	<script src="js/views/app.js"></script>
 
