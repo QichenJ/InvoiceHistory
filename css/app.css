@@ -114,3 +114,18 @@ li {
 #ser-num:focus {
 	outline: 0;
 }
+
+.sel-list-title {
+	color: rgba(175, 47, 47, 0.35);
+	display: inline-block;
+	float: left;
+	width: 25%;
+	margin: 17px 0 0 0;
+
+}
+
+.new-wrapper {
+	width: 25%;
+	display: inline;
+	float: left;
+}

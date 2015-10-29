@@ -11,9 +11,17 @@ app.AppView = Backbone.View.extend({
 		this.$subButton = this.$('#form-button');
 		this.$invItems = this.$('.inv-items');
 		this.$serItems = this.$('#search-list');
+		this.$selItems = this.$('#select-list');
 		this.listenTo(app.Invs, 'add', this.addOne);
 		this.listenTo(app.Sers, 'add', this.addOneSer);
+		this.listenTo(app.Sels, 'add', this.addOneSel);
 		this.addProducts();
+	},
+
+	addOneSel: function( sel ) {
+		var view = new selView({model: sel});
+		this.$selItems.append(view.render().el);
+
 	},
 
 	search: function() {
