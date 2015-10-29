@@ -1,9 +1,9 @@
 var app = app || {};
 app.AppView = Backbone.View.extend({
 	el: 'body',
-
 	events: {
-		'click #form-button': 'createOnAdd'
+		'click #form-button': 'createOnAdd',
+		'keyup #search': 'search'
 	},
 
 	initialize: function() {
@@ -13,13 +13,61 @@ app.AppView = Backbone.View.extend({
 		this.$serItems = this.$('#search-list');
 		this.listenTo(app.Invs, 'add', this.addOne);
 		this.listenTo(app.Sers, 'add', this.addOneSer);
-		this.render();
+		this.addProducts();
+	},
+
+	search: function() {
+		var search = this.$('#search').val().trim().toLowerCase();
+		this.renderList(app.Sers.search(search));
+	},
+
+	renderList: function(items) {
+		this.$serItems.html('');
+		var self = this;
+		items.each(function(item) {
+			console.log(self.$serItems);
+			var view = new app.serView({model: item});
+			self.$serItems.append(view.render().el);
+
+		});
+		return this;
+	},
+
+	addProducts: function() {
+		app.Sers.create({itemName: 'orange',
+			price: '5'
+		});
+		app.Sers.create({itemName: 'apple',
+			price: '4'
+		});
+		app.Sers.create({itemName: 'fries',
+			price: '8'
+		});
+		app.Sers.create({itemName: 'sprite',
+			price: '2'
+		});
+		app.Sers.create({itemName: 'pizza',
+			price: '9'
+		});
+		app.Sers.create({itemName: 'water',
+			price: '1'
+		});
+		app.Sers.create({itemName: 'hamburger',
+			price: '12'
+		});
+		app.Sers.create({itemName: 'banana',
+			price: '7'
+		});
+		app.Sers.create({itemName: 'hotpot',
+			price: '25'
+		});
+		app.Sers.create({itemName: 'rice',
+			price: '3'
+		});
 	},
 
 	render: function() {
-		app.Sers.create({itemName: 'orange',
-			price: '10'
-		});
+
 	},
 
 	addOne: function( inv ) {
@@ -29,7 +77,6 @@ app.AppView = Backbone.View.extend({
 
 	addOneSer: function( ser ) {
 		var view = new app.serView({model: ser});
-		console.log(view.render().el);
 		this.$serItems.append(view.render().el);
 
 	},

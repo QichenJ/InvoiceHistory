@@ -40,18 +40,16 @@
 						<form>
 							<h1>Search Bar</h1>
 							<input id="search" placeholder="search...">
-							<button id="search-button" type="submit">Search</button>
 						</form>
 					</div>
 					<div>
+						<div class="ser-title">
+							<p class="ser-list-title">Name</p>
+							<p class="ser-list-title">Price</p>
+							<p class="ser-list-title">Number</p>
+							<p class="clear"></p>
+						</div>
 						<ul id="search-list">
-							<li>
-								<div>
-									<span>Name</span>
-									<span>Price</span>
-									<span>Number</span>
-								</div>
-							</li>
 						</ul>
 					</div>
 
@@ -66,18 +64,26 @@
 	</section>
 	<script type="text/template" id="item-template">
 		<div class="view">
-			<span><%= firstName %></span>
-			<span><%= lastName %></span>
-			<span><%= invNum %></span>
-			<span><%= invDate %></span>
+			<p><%= firstName %></p>
+			<p><%= lastName %></p>
+			<p><%= invNum %></p>
+			<p><%= invDate %></p>
 		</div>
 	</script>
 	<script type="text/template" id="search-template">
 		<div class="searchView">
-			<span><%= itemName %></span>
-			<span><%= price %></span>
-			<input type="text" placeholder="0">
-			<button>Add</button>
+			<div class="wrapper">
+				<p class="ser-list-item"><%= itemName %></p>
+			</div>
+			<div class="wrapper">
+				<p class="ser-list-item"><%= price %></p>
+			</div>
+			<div class="wrapper">
+				<input id="ser-num" type="text" placeholder="0">
+				<button id="ser-sub">Add</button>
+			</div>
+			<div class="clear"></div>
+
 		</div>
 	</script>
 	<script src="js/lib/jquery-2.1.4.min.js"></script>
@@ -98,3 +104,4 @@
 
 
 </body>
+</html>

@@ -8,6 +8,10 @@ body {
 h1 {
 	color: rgba(175, 47, 47, 0.15);
 }
+
+li {
+	list-style: none;
+}
 /*invoices section*/
 #invoices {
 	background-color: rgba(0, 0, 0, 0.05);
@@ -39,6 +43,7 @@ h1 {
 	color: #fff;
 	line-height: 20px;
 	padding: 20px;
+	outline: none;
 	background-color: rgba(80, 80, 80, 0.2);
 }
 
@@ -66,3 +71,46 @@ h1 {
 #search:focus {
 	outline: 0;
 	border: none;
+}
+
+#search-list {
+	height: 200px;
+	overflow: scroll;
+}
+
+.ser-title {
+	padding: 0 0 0 40px;
+}
+.ser-list-title {
+	color: rgba(175, 47, 47, 0.35);
+	display: inline-block;
+	float: left;
+	width: 33%;
+
+}
+
+.wrapper {
+	width: 33%;
+	display: inline;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+
+
+#ser-num {
+	width: 25px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: none;
+	box-shadow: 0 -2px -1px rgba(0, 0, 0, 0.03);
+	text-align: center;
+}
+
+
+
+#ser-num:focus {
+	outline: 0;
+}
