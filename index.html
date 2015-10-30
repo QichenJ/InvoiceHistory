@@ -19,14 +19,10 @@
 							<input class="form-input" type="text" name="first-Name" placeholder="First Name" autofocus>
 							<input class="form-input" type="text" name="last-Name" placeholder="Last Name">
 							<br>
-							<input class="form-input" type="text" name="data" placeholder="Today's date">
-							<input class="form-input" type="text" name="invoice-num" placeholder="invoice number">
+							<input class="form-input" type="text" name="data" placeholder="Today's date  MM/DD/YYYY">
+							<input class="form-input" type="text" name="invoice-num" placeholder="invoice number XXX-XXXX">
 						</form>
-						<button id="form-button" type="button">Add</button>
-					</div>
-					<div id="inv-lists">
-						<h1>Invoices History</h1>
-						<ul class="inv-items"></ul>
+
 					</div>
 				</div>
 			</div>
@@ -66,16 +62,52 @@
 						</div>
 						<ul id="select-list"></ul>
 					</div>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+						<button id="form-button" type="button">Add</button>
+						<div>
+
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="history">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+						<div id="inv-lists">
+						<h1>Invoices History</h1>
+
+						<ul class="inv-items"></ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<script type="text/template" id="item-template">
 		<div class="view">
-			<p><%= firstName %></p>
-			<p><%= lastName %></p>
-			<p><%= invNum %></p>
-			<p><%= invDate %></p>
+			<div class="inv-title">
+				<div class="inv-wrapper">
+					<p><%= firstName %></p>
+				</div>
+				<div class="inv-wrapper">
+					<p><%= lastName %></p>
+				</div>
+				<div class="inv-wrapper">
+					<p><%= invNum %></p>
+				</div>
+				<div class="inv-wrapper">
+					<p><%= invDate %></p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="inv-body">
+				<ul class="inv-sel-items"></ul>
+			</div>
 		</div>
 	</script>
 	<script type="text/template" id="search-template">
@@ -91,9 +123,9 @@
 				<button id="ser-sub">Add</button>
 			</div>
 			<div class="clear"></div>
-
 		</div>
 	</script>
+
 	<script type="text/template" id="select-template">
 		<div>
 			<div class="new-wrapper">
@@ -106,6 +138,24 @@
 				<input id="sel-num" type="text" value="<%= num %>"/>
 			</div>
 			<div class="new-wrapper">
+				<p id="sel-tot"><%= total %></p>
+			</div>
+			<div class="clear"></div>
+
+		</div>
+	</script>
+	<script type="text/template" id="ins-select-template">
+		<div>
+			<div class="inv-sel-wrapper">
+				<p><%= itemName %></p>
+			</div>
+			<div class="inv-sel-wrapper">
+				<p><%= price %></p>
+			</div>
+			<div class="inv-sel-wrapper">
+				<p><%= num %></p>
+			</div>
+			<div class="inv-sel-wrapper">
 				<p id="sel-tot"><%= total %></p>
 			</div>
 			<div class="clear"></div>
