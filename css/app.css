@@ -115,6 +115,10 @@ li {
 	outline: 0;
 }
 
+.sel-title {
+	padding: 0 0 0 40px;
+}
+
 .sel-list-title {
 	color: rgba(175, 47, 47, 0.35);
 	display: inline-block;
@@ -124,8 +128,22 @@ li {
 
 }
 
+#select-list {
+	height: 200px;
+	overflow: scroll;
+}
+
 .new-wrapper {
 	width: 25%;
 	display: inline;
 	float: left;
+}
+
+#sel-num {
+	width: 25px;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: none;
+	box-shadow: 0 -2px -1px rgba(0, 0, 0, 0.03);
+	text-align: center;
+	outline: none;
 }

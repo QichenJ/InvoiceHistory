@@ -21,9 +21,16 @@ app.serView = Backbone.View.extend({
 		if(num == 0) {
 			return;
 		}
-		var att = tempMpdel.attributes;
+		var att = {};
+		var temp = tempModel.attributes;
+		for(var a in temp) {
+			if(temp.hasOwnProperty(a)) {
+				att[a] = temp[a];
+			}
+		}
 		att.num = num;
-		att.total =
+		att.total = att.num * att.price;
 		app.Sels.add(att);
+
 	}
 });

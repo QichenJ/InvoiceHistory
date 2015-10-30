@@ -18,8 +18,12 @@ app.AppView = Backbone.View.extend({
 		this.addProducts();
 	},
 
+	removeHtml: function( model ) {
+		model.el.remove();
+	},
+
 	addOneSel: function( sel ) {
-		var view = new selView({model: sel});
+		var view = new app.selView({model: sel});
 		this.$selItems.append(view.render().el);
 
 	},
@@ -33,7 +37,6 @@ app.AppView = Backbone.View.extend({
 		this.$serItems.html('');
 		var self = this;
 		items.each(function(item) {
-			console.log(self.$serItems);
 			var view = new app.serView({model: item});
 			self.$serItems.append(view.render().el);
 
