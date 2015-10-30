@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-	color: rgba(175, 47, 47, 0.15);
+	color: rgba(202, 29, 29, 0.47);
 }
 
 li {
@@ -14,7 +14,7 @@ li {
 }
 /*invoices section*/
 #invoices {
-	background-color: rgba(0, 0, 0, 0.05);
+	background-color: rgba(0, 0, 0, 0.08);
 }
 
 
@@ -57,6 +57,13 @@ li {
 
 }
 /*selector section*/
+
+.ban-hr {
+	width: 80%;
+	margin: 18px auto 24px auto;
+	border-color: rgb(150, 150, 150);
+}
+
 #selector {
 	background-color: rgba(255, 189, 108, 0.2);
 }
@@ -148,10 +155,15 @@ li {
 	outline: none;
 }
 /*invonice history*/
+#history {
+	background-color: rgba(0, 0, 0, 0.08);
+}
+
 .inv-wrapper {
 	width: auto;
 	display: inline;
 	float: left;
+	padding: 0 10px 0 10px;
 }
 
 .inv-sel-wrapper {
@@ -169,4 +181,12 @@ li {
 	margin: 2px;
 	left: -40px;
 
+}
+
+.inv-title {
+	background-color: rgba(239, 77, 77, 0.28);
+}
+
+.inv-title:hover {
+	cursor: pointer;
 }

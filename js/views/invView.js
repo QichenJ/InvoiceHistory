@@ -21,6 +21,7 @@ app.invView = Backbone.View.extend({
 		this.$el.html( this.template( this.model.attributes ));
 		var models = app.Sels;
 		var self = this;
+		var total = 0;
 		var htmlTitle = '<div class="sel-title">'+
 		'<p class="inv-sel">Name</p>' +
 		'<p class="inv-sel">Price</p>' +
@@ -30,8 +31,10 @@ app.invView = Backbone.View.extend({
 		self.$('.inv-sel-items').append(htmlTitle);
 		models.each(function(model) {
 			self.$('.inv-sel-items').append(self.intTemplate(model.attributes));
+			total = total + +model.attributes.total;
 
 		});
+		this.$('#total-cost').text(total);
 		this.$('.inv-body').hide();
 		$('#select-list').html('');
 		models.each(function(model) {
