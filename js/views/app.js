@@ -106,8 +106,42 @@ app.AppView = Backbone.View.extend({
 
 	createOnAdd: function(e) {
 		e.preventDefault();
-		app.Invs.create( this.newAttributes() );
-		this.$inputs.val('');
+		var alert = this.$('#alert');
+		alert.html('');
+		var firstName = this.$('.form-input:eq(0)').val().trim();
+		var lastName = this.$('.form-input:eq(1)').val().trim();
+		var date = this.$('.form-input:eq(2)').val().trim();
+		var invoiceNum = this.$('.form-input:eq(3)').val().trim();
+		var patternDate = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+		var patternNum = /^([0-9]{3})\-([0-9]{4})/;
+		var datePass = patternDate.test(date);
+		var numPass = patternNum.test(invoiceNum)
+		if(lastName == '' || firstName == '' || !datePass || !numPass || app.Sels.length == 0) {
+			if(firstName == '') {
+				alert.append('<p class="p-alert"> Please Enter FIrst Name</p>');
+			}
+
+			if(lastName == '') {
+				alert.append('<p class="p-alert"> Please Enter Last Name</p>');
+			}
+
+			if(!datePass) {
+				alert.append('<p class="p-alert"> Date Is Invalid</p>');
+			}
+
+			if(!numPass) {
+				alert.append('<p class="p-alert"> Invoice Number Is Invalid</p>');
+			}
+
+			if(app.Sels.length == 0) {
+				alert.append('<p class="p-alert"> No Product Is Selected</P>');
+			}
+		} else {
+			app.Invs.create( this.newAttributes() );
+			this.$inputs.val('');
+			alert.html('');
+		}
+
 	}
 
 });
