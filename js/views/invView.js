@@ -30,6 +30,12 @@ app.invView = Backbone.View.extend({
 		self.$('.inv-sel-items').append(htmlTitle);
 		models.each(function(model) {
 			self.$('.inv-sel-items').append(self.intTemplate(model.attributes));
+
+		});
+		this.$('.inv-body').hide();
+		$('#select-list').html('');
+		models.each(function(model) {
+			app.Sels.remove(app.Sels.where(model));
 		});
 
 		return this;

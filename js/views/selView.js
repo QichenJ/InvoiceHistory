@@ -14,7 +14,7 @@ app.selView = Backbone.View.extend({
 	},
 
 	checkNum: function(){
-		var num = $('#sel-num').val().trim();
+		var num = this.$('#sel-num').val().trim();
 		var tempModel = this.model;
 		if(num === '') {
 			app.Sels.remove(app.Sels.where(tempModel));
@@ -24,7 +24,7 @@ app.selView = Backbone.View.extend({
 
 	changeTotal: function() {
 		var tempModel = this.model;
-		var newNum = $('#sel-num').val().trim();
+		var newNum = this.$('#sel-num').val().trim();
 		if(newNum === '0') {
 			app.Sels.remove(app.Sels.where(tempModel));
 			this.el.remove();
@@ -32,7 +32,7 @@ app.selView = Backbone.View.extend({
 			var att = this.model.attributes;
 			att.num = newNum;
 			att.total = att.num * att.price;
-			$('#sel-tot').text(att.total);
+			this.$('#sel-tot').text(att.total);
 		}
 	}
 });

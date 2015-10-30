@@ -18,9 +18,6 @@ app.AppView = Backbone.View.extend({
 		this.addProducts();
 	},
 
-	removeHtml: function( model ) {
-		model.el.remove();
-	},
 
 	addOneSel: function( sel ) {
 		var view = new app.selView({model: sel});

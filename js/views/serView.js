@@ -21,6 +21,7 @@ app.serView = Backbone.View.extend({
 		if(num == 0) {
 			return;
 		}
+		this.$('#ser-num').val('');
 		var att = {};
 		var temp = tempModel.attributes;
 		for(var a in temp) {
