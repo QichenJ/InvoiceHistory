@@ -4,7 +4,8 @@ app.selView = Backbone.View.extend({
 	template: _.template( $('#select-template').html()),
 	events: {
 		'keyup #sel-num': 'changeTotal',
-		'focusout #sel-num': 'checkNum'
+		'focusout #sel-num': 'checkNum',
+
 	},
 
 	render: function() {
@@ -15,7 +16,7 @@ app.selView = Backbone.View.extend({
 	checkNum: function(){
 		var num = $('#sel-num').val().trim();
 		var tempModel = this.model;
-		if(num == 0) {
+		if(num === '') {
 			app.Sels.remove(app.Sels.where(tempModel));
 			this.el.remove();
 		}

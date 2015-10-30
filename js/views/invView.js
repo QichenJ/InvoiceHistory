@@ -5,6 +5,11 @@ app.invView = Backbone.View.extend({
 	template: _.template( $('#item-template').html() ),
 	intTemplate: _.template( $('#ins-select-template').html() ),
 	events: {
+		'click .inv-title': 'toggle'
+	},
+
+	toggle: function() {
+		this.$('.inv-body').toggle('slow');
 
 	},
 
@@ -22,10 +27,11 @@ app.invView = Backbone.View.extend({
 		'<p class="inv-sel">Number</p>'+
 		'<p class="inv-sel">Total</p>'+
 		'<p class="clear"></p></div>';
-		self.$el.append(htmlTitle);
+		self.$('.inv-sel-items').append(htmlTitle);
 		models.each(function(model) {
-			self.$el.append(self.intTemplate(model.attributes));
+			self.$('.inv-sel-items').append(self.intTemplate(model.attributes));
 		});
+
 		return this;
 	}
 });
